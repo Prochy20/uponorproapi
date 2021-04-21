@@ -1,0 +1,49 @@
+FORMAT: 1A
+HOST: https://www.uponor.com/
+
+# Uponor PRO App - API
+
+Following API is designated to be used with UPONOR PRO APP.
+
+## News [/api/UponorInternet/Newslist/{?language,count}]
+
+### List all [GET]
+
++ Parameters
+    + language (string, optional) - Language code in which should the news be displayed (e.g. cs-cz, de-de, ...)
+    + count (number, optional) - Ammount of items in news
+
++ Response 200 (application/json)
+
+        {
+            status: "1",
+            message: "News Get Successfully",
+            news: [
+                {
+                    id: "{FBC4267C-DE68-4874-8AF6-57F551834718}",
+                    title: "Zweimal auf dem Treppchen ",
+                    description: "Bei einer Leserwahl des Fachportals haustec.de hat Uponor zwei hervorragende zweite Pl&auml;tze erreicht: einmal mit der Einzelraumregelung Smatrix Pulse und einmal mit dem Online-Konfigurator f&uuml;r Verteilerstationen von Heiz- und K&uuml;hlsystemen.&nbsp;",
+                    mediaType: "image",
+                    createDate: "2021-04-08",
+                    mediaFile: "https://www.uponor.de/-/media/country-specific/dach-benelux/news/newsarticle/haustec-leserwahl/haustec-leserwahl-510x320.jpg?h=300&w=400&usecustomfunctions=1&centercrop=1&hash=235C6C1513E44BCDA18A2D2A2E96EFF67A019E92",
+                    mediaFileThumb: "https://www.uponor.de/-/media/country-specific/dach-benelux/news/newsarticle/haustec-leserwahl/haustec-leserwahl-510x320.jpg?h=100&w=100&usecustomfunctions=1&centercrop=1&hash=73CDF9EC64556499B01BBFA8FE40B99ECE542579",
+                    url: "https://www.uponor.de/unternehmen/news/newsartikel/2021-04-haustec-leserwahl",
+                },
+            ],
+        }
+        
++ Attributes
+    + status (string) - Status number (1 = success | 0 = ??)
+    + message (string) - Status message
+    + news (array [News item]) - list of news items
+
+# Data Structures
+
+## News item (object)
++ id (string) - Item unique id
++ title (string) - Item title
++ description (string) - item perex (short description)
++ mediaType (string) - mediaFile type
++ mediaFile (string) - URL to media file
++ mediaFileThumb (string) - URL to media file type
++ url (string) - Item URL
