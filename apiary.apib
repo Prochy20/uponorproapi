@@ -10,7 +10,7 @@ Folalowing API is designated to be used with UPONOR PRO APP.
 ### Newslist [GET]
 
 + Parameters
-    + language (string, optional) - Language code in which should the news be displayed (e.g. cs-cz, de-de, ...)
+    + language: `de-de` (string, required) - Language code in which should the news be displayed
     + count (number, optional) - Ammount of items in news
 
 + Response 200 (application/json)
@@ -31,6 +31,7 @@ Folalowing API is designated to be used with UPONOR PRO APP.
                 },
             ],
         }
+
 + Attributes
     + status (string) - Status number (1 = success | 0 = ??)
     + message (string) - Status message
@@ -42,7 +43,7 @@ Folalowing API is designated to be used with UPONOR PRO APP.
     + plz (number) - ??
     + type (number, optional) - ??
 
-### Get [GET]
+### Get some [GET]
 
 + Response 200 (application/json)
         
@@ -72,9 +73,50 @@ Folalowing API is designated to be used with UPONOR PRO APP.
             ]    
         }
 
+
 + Attributes
     + ItemName (string) - Item name
-    + Values (array [Sales locator item]) - Sales locator items
+    + Values (array [Sales locator item]) - list of news items
+
+
+## Contacts [/api/UponorInternet/Contact{?language,type}]
+
++ Parameters
+    + language: `de-de` (string, required) - Language code in which should the news be displayed
+    + type (enum[string], optional) - Contact type filter
+        + Members
+            + `academy`
+            + `uponorandmore`
+            + `customerservice`
+            + `technicalhotline`
+
+### Get some [GET]
+
++ Response 200 (application/json)
+        
+        {
+            Name: "Contact Service",
+            IsoCode: "de-DE",
+            Values: [
+                {
+                    ContactType: "academy",
+                    ContactName: "Academy",
+                    ContactPhone: "+ 49 800 7780050 ",
+                    ContactFax: "",
+                    ContactMobile: "",
+                    ContactMailLink: {
+                        LinkDescription: "academy@uponor.com",
+                        Mailto: "academy@uponor.com",
+                        ContactMailSubject: "Uponor Academy"
+                    }
+                }
+            ],
+        }
+        
++ Attributes
+    + Name (string) - Name
+    + IsoCode (string) - Item iso code
+    + Values (array [Contact item]) - List of contact service items
 
 # Data Structures
 
@@ -106,4 +148,16 @@ Folalowing API is designated to be used with UPONOR PRO APP.
 + MemberShipStartColumn (string) - ???
 + RoleID (string) - ????
 + Plz (string) - ????
+
+## Contact item (object)
++ ContactType (string) - Contact type
++ ContactName (string) - Contact name
++ ContactPhone (string) - Contact Phone
++ ContactFax (string) - Contact Fax
++ ContactMobile (string) - Contact mobile
++ ContactMailLink (object) - Contact Mail ContactMailLink
+    + LinkDescription (string) - Link description
+    + Mailto (string) - Mailto email address
+    + ContactMailSubject (string) - Contact email subject
+
 
