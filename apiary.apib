@@ -7,7 +7,7 @@ Folalowing API is designated to be used with UPONOR PRO APP.
 
 ## News [/api/UponorInternet/Newslist/{?language,count}]
 
-### List all [GET]
+### Newslist [GET]
 
 + Parameters
     + language (string, optional) - Language code in which should the news be displayed (e.g. cs-cz, de-de, ...)
@@ -36,6 +36,46 @@ Folalowing API is designated to be used with UPONOR PRO APP.
     + message (string) - Status message
     + news (array [News item]) - list of news items
 
+## Sales Locator [/api/UponorInternet/SalesLocator/{?plz,type}]
+
++ Parameters
+    + plz (number) - ??
+    + type (number, optional) - ??
+
+### Get [GET]
+
++ Response 200 (application/json)
+        
+        {
+            ItemName: "Sales Locator List"
+            Values: [
+                        {
+                            Company: "Uponor GmbH",
+                            IdNo: "67",
+                            Person: "Sven Argo",
+                            Street: "",
+                            PoBox: "",
+                            Zipcode: "16761",
+                            City: "Hennigsdorf",
+                            Region: "",
+                            Country: "Deutschland",
+                            Phone: "03302 201809",
+                            Mobile: "0172 4077723",
+                            Fax: "09521 690 99232",
+                            Email: "sven.argo@uponor.com",
+                            Web: "www.uponor.de",
+                            Image: "/-/media/uponor-internet/professional-images/argo-sven.jpg",
+                            MembershipStartColumn: "",
+                            RoleId: "de-DE",
+                            Plz: "1"
+                        },
+            ]    
+        }
+
++ Attributes
+    + ItemName (string) - Item name
+    + Values (array [Sales locator item]) - Sales locator items
+
 # Data Structures
 
 ## News item (object)
@@ -46,3 +86,24 @@ Folalowing API is designated to be used with UPONOR PRO APP.
 + mediaFile (string) - URL to media file
 + mediaFileThumb (string) - URL to media file type
 + url (string) - Item URL
+
+## Sales locator item (object)
++ Company (string) - Company ItemName
++ IdNo (string) - ID NO
++ Person (string) - Person name
++ Street (string) - Street name
++ PoBox (string) - Po Box
++ Zipcode (string) - Zipcode
++ City (string) - City name
++ Region (string) - Region name
++ Country (string) - Country name
++ Phone (string) - Phone number
++ Mobile (string) - Mobile number
++ Fax (string) - Fax number
++ Email (string) - Email address
++ Web (string) - Website address
++ Image (string) - Image URL (relative)
++ MemberShipStartColumn (string) - ???
++ RoleID (string) - ????
++ Plz (string) - ????
+
