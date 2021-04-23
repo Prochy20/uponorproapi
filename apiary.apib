@@ -164,6 +164,48 @@ Folalowing API is designated to be used with UPONOR PRO APP.
     + ItemCountry (string) - Item country
     + Professionals (array [Profesionals locator item]) - List of professionals
 
+## Downloadcenter [/api/UponorInternet/CatalogueDownloadList{?language,section,doc}]
+
++ Parameters
+    + language: `de-de` (string, required) - Language code in which should the content be displayed
+    + section: `BLD` (enum[string], optional) - Section type filter
+        + Members
+            + `BLD`
+            + `Infra`
+    + doc: `E9E99F72DDE3483C862B50A5A37A3BB4` (string, optional) - Document type filter
+
+### Get some [GET]
+
++ Response 200 (application/json)
+        
+        {
+            ItemName: "DownloadCenter",
+            IsoCode: "de-DE",
+            Profesionals: [
+                {
+                    BrochureID: "1089122",
+                    Date: "12.03.2017",
+                    Description: "Produktbroschüre",
+                    DocumentType: "Produktbroschüren ",
+                    DownloadLink: "https://www.uponor.de/-/media/country-specific/dach-benelux/downloadcenter-archiv/01-salesfolder-archiv/uponor-sf-fluvia-t-push-12-de-1089122-201703.pdf?v=b704c33d-e210-4027-a948-db59cd6154ec",
+                    FileType: "pdf",
+                    FileTypeIcon: "https://www.uponor.de/UponorInternet/Images/Mimetypes/pdf.png",
+                    ItemID: "{8B77D29D-A19B-4154-A9F4-B40DB895E68D}",
+                    NewIcon: "",
+                    Size: "1.12MB",
+                    Thumbnail: "https://www.uponor.de/-/media/uponor-internet/thumbnails/pdfs/8/8b77d29da19b4154a9f4b40db895e68d.jpg?h=360&w=250&usecustomfunctions=1&centercrop=1&hash=7B2718BE9ED854680F4BE604085983D83EC824AC",
+                    Title: "Uponor Fluvia T Push-12 Kleinstpumpengruppen "
+                },
+            ],
+        }
+
++ Attributes
+    + Name (string) - Name
+    + IsoCode (string) - Item iso code
+    + Values (array [DLC Item]) - List of DLC items
+
+
+
 # Data Structures
 
 ## News item (object)
@@ -224,6 +266,20 @@ Folalowing API is designated to be used with UPONOR PRO APP.
 + AdditionalInformation (string) - AdditionalInformation
 + Latitude (string) - Item latitude
 + Longitude (string) - Item longitude
+
+## DLC Item (object)
++ BrochureID (string) - Brochure ID
++ Date (string) - Date
++ Description (string) - Description
++ DocumentType (string) - Document type
++ DownloadLink (string) - Absolute URL to download file
++ FileType (string) - File type (extension)
++ FileTypeIcon (string) - Absolute URL to FileType icon
++ ItemID (string) - Item ID
++ NewIcon (string) - New Icon
++ Size (string) - File size
++ Thumbnail (string) - Absolute URL to file thumbnail
++ Title (string) - File Title
 
 
 
