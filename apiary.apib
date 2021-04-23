@@ -82,7 +82,7 @@ Folalowing API is designated to be used with UPONOR PRO APP.
 ## Contacts [/api/UponorInternet/Contact{?language,type}]
 
 + Parameters
-    + language: `de-de` (string, required) - Language code in which should the news be displayed
+    + language: `de-de` (string, required) - Language code in which should the contacts be displayed
     + type (enum[string], optional) - Contact type filter
         + Members
             + `academy`
@@ -117,6 +117,52 @@ Folalowing API is designated to be used with UPONOR PRO APP.
     + Name (string) - Name
     + IsoCode (string) - Item iso code
     + Values (array [Contact item]) - List of contact service items
+
+
+## Locators/Profesionals [/api/UponorInternet/Map/professionals{?type,language,updateDate}]
+
++ Parameters
+    + language: `de-de` (string, required) - Language code in which should the content be displayed
+    + type: `Dealer` (enum[string], required) - Profesional type filter
+        + Members
+            + `Dealer`
+            + `Sales`
+            + `Installer`
+
+### Get some [GET]
+
++ Response 200 (application/json)
+        
+        {
+            ItemName: "Germany Wholesaler",
+            ItemCountry: "de-DE",
+            Profesionals: [
+                {
+                    Name: "Neugart KG - Fachgroßhandel für Haustechnik",
+                    StreetAddress: "Max-Planck-Straße 2",
+                    ZipCode: "53773",
+                    Municipality: "",
+                    City: "Hennef",
+                    Country: "",
+                    Telephone: "+49 (0)2242-9050-0",
+                    Mobile: "",
+                    Fax: "",
+                    Email: "",
+                    WebAddress: "http://www.neugart-kg.de",
+                    TypeName: "Großhändler",
+                    TypeIcon: "wholesaler",
+                    Specialities: [ ],
+                    AdditionalInformation: '<img style="width:25px" src="https://www.uponor.de/images/Website/merchanicTypes/heat.png"/> Heizen/Kühlen<br/><img style="width:25px" src="https://www.uponor.de/images/Website/merchanicTypes/sani.png"/> Installation<br/><img style="width:25px" src="https://www.uponor.de/images/Website/merchanicTypes/supply.png"/> Versorgung',
+                    Latitude: "50.7664873",
+                    Longitude: "7.3171985"
+                },
+            ],
+        }
+
++ Attributes
+    + ItemName (string) - Name
+    + ItemCountry (string) - Item country
+    + Professionals (array [Profesionals locator item]) - List of professionals
 
 # Data Structures
 
@@ -159,5 +205,27 @@ Folalowing API is designated to be used with UPONOR PRO APP.
     + LinkDescription (string) - Link description
     + Mailto (string) - Mailto email address
     + ContactMailSubject (string) - Contact email subject
+
+
+## Profesionals locator item (object)
++ Name (string) - Name
++ StreetAddress (string) - Street address
++ Zipcode (string) - Zipcode
++ Municipality (string) - Municipality
++ City (string) - City name
++ Country (string) - Country name
++ Telephone (string) - Telephone number
++ Mobile (string) - Mobile number
++ Fax (string) - Fax number
++ WebAddress (string) - Website address
++ TypeName (string) - Type name
++ TypeIcon (string) - Type icon
++ Specialities (array) - Specialitites
++ AdditionalInformation (string) - AdditionalInformation
++ Latitude (string) - Item latitude
++ Longitude (string) - Item longitude
+
+
+
 
 
