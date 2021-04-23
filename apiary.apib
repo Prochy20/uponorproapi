@@ -205,6 +205,32 @@ Folalowing API is designated to be used with UPONOR PRO APP.
     + Values (array [DLC Item]) - List of DLC items
 
 
+## Faq List [/api/UponorInternet/faq/list{?language}]
+
++ Parameters
+    + language: `de-de` (string, optional) - Language code in which should the content be displayed
+
+### Get all [GET]
+
++ Response 200 (application/json)
+
+        {
+            title: " "
+            Faqs: [
+                {
+                    ID: "{74C75D1E-450A-4C89-AB49-0D1381F8EA68}",
+                    Question: "<strong>Sind S-Press PLUS Komponenten kompatibel mit dem bestehenden Uponor Verbundrohrsystem?</strong>",
+                    Answer: "Alle S-Press PLUS Komponenten sind vollst&auml;ndig kompatibel mit dem Uponor Verbundrohrsystem. Es werden auch keine anderen Werkzeuge ben&ouml;tigt."
+                }
+            ]
+        }
+
++ Attributes
+    + Title (string) - Title
+    + Faqs (array[object])
+        + ID (string) - Item ID
+        + Question (string) - FAQ Question
+        + Answer (string) FAQ Answer
 
 # Data Structures
 
