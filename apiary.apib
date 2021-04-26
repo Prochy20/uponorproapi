@@ -230,7 +230,28 @@ Folalowing API is designated to be used with UPONOR PRO APP.
     + Faqs (array[object])
         + ID (string) - Item ID
         + Question (string) - FAQ Question
-        + Answer (string) FAQ Answer
+
+## Product online catalogue [/api/UponorInternet/poc{?language}]
+
++ Parameters
+    + language: `de-de` (string, optional) - Language code in which should the content be displayed
+
+### Get JSON [GET]
+
++ Response 200 (application/json)
+
+        {
+            Name: "Product online Catalogue",
+            IsoCode: "de-DE",
+            LastUpdated: "2021-02-16",
+            DownloadLink: "https://www.uponor.de/-/media/uponor-internet/poc/dedepocjson.json",
+        }
+
++ Attributes
+    + Name (string) - Name
+    + IsoCode (string) - Item iso code
+    + LastUpdated (string) - Date of last updateDate
+    + DownloadLink (string) - Absolute URL to download products JSON
 
 # Data Structures
 
